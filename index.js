@@ -9,7 +9,7 @@ try {
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
-  const env = process.env;
+  const env = JSON.stringify(process.env, undefined, 2);
   console.log(`The event payload: ${payload}`);
   console.log(`The environment: ${env}`);
 } catch (error) {
